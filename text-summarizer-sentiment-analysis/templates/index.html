@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main class="page-shell">
+    <section class="hero">
+        <h1>NLP Intelligence System</h1>
+        <p>Analyze text for sentiment, spam detection, and concise summary in one clean workflow.</p>
+    </section>
+
+    <section class="analyzer-panel">
+        <label for="textInput" class="sr-only">Text to analyze</label>
+        <textarea id="textInput" placeholder="Paste text here and click Analyze Text..."></textarea>
+        <div class="action-row">
+            <button id="analyzeBtn" type="button">Analyze Text</button>
+            <button id="sampleBtn" class="secondary-btn" type="button">Try Sample Text</button>
+        </div>
+        <p id="errorText" class="error-text" aria-live="polite"></p>
+
+        <div id="loadingBox" class="loading-box hidden" aria-live="polite">
+            <span class="spinner"></span>
+            <span>Analyzing your text...</span>
+        </div>
+    </section>
+
+    <section class="results-grid" id="resultsGrid">
+        <article class="result-card">
+            <h2>Sentiment Result</h2>
+            <p id="sentimentResult" class="result-value">Awaiting input</p>
+            <p id="sentimentModel" class="result-meta"></p>
+        </article>
+
+        <article class="result-card">
+            <h2>Spam Detection Result</h2>
+            <p id="spamResult" class="result-value">Awaiting input</p>
+        </article>
+
+        <article class="result-card summary-card">
+            <h2>Summary Output</h2>
+            <p id="summaryResult" class="summary-text">Your summary will appear here after analysis.</p>
+        </article>
+    </section>
+
+    <footer class="footer-bar">
+        <p>Built as an academic NLP deployment project.</p>
+        <span>Repository link: add your new project URL here</span>
+    </footer>
+</main>
+
+{% endblock %}
